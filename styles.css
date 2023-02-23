@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+h1 {
+  width: 100%;
+  margin-top: 0px;
+  padding: 45px;
+  height: 40px;
+  text-align: center;
+  color: white;
+  background-color: #FF5700;
+}
+
+form#search-form {
+  display: flex;
+  flex-flow: row nowrap
+}
+
+#error-alert {
+  background-color: #cc0000;
+  width: 100%;
+  padding: 35px;
+  margin: 10px;
+}
+
+.hidden {
+  display: none;
+}
