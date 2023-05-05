@@ -93,6 +93,7 @@ p > a {
 
 #error-alert {
   width: 50%;
+  border: 3px dashed white;
 }
 
 img {
