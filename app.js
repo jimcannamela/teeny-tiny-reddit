@@ -31,6 +31,21 @@ searchBarSubmit.addEventListener("click", function(event)  {
         .then(response => {
             return response.json()
         })
-        .then(console.log)
+        .then(response => {
+            for(let post of response.data.children){
+                console.log(post)
+                getSubredditValues(post)
+            }
+        })
 
 });
+
+function getSubredditValues(APIresponse){
+    const values = {
+        title : APIresponse.title,
+        authorName : APIresponse.author,
+        authorLink : `https://www.reddit.com/user/${APIresponse.author}/`,
+        upvotes : APIresponse.ups
+    }
+    console.log(values)
+}
