@@ -43,7 +43,6 @@ searchBarSubmit.addEventListener("click", function(event)  {
         })
         .then(response => {
             for(let post of response.data.children){
-                console.log(post)
                 getSubredditValues(post.data)
             }
         })
