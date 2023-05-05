@@ -43,6 +43,7 @@ searchBarSubmit.addEventListener("click", function(event)  {
         })
         .then(response => {
             for(let post of response.data.children){
+                console.log(post)
                 getSubredditValues(post.data)
             }
         })
@@ -59,28 +60,35 @@ function getSubredditValues(APIresponse){
         authorLink : `https://www.reddit.com/user/${APIresponse.author}/`,
         upvotes : APIresponse.ups,
         subURL : APIresponse.url,
-        numComments : APIresponse.num_comments
+        numComments : APIresponse.num_comments,
+        dateCreated : APIresponse.created
     }
     insertData(values);
 }
 
 function insertData(postValues) {
+    var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
+    d.setUTCSeconds(postValues.dateCreated)
     const listItem = document.createElement('li');
     const subTitle = document.createElement('h2');
     const authorTag = document.createElement('p');
     const authorLink = document.createElement('a');
     const upvote = document.createElement('p');
     const subLink = document.createElement('a');
+    const timeSpan = document.createElement('span');
 
     authorLink.setAttribute("href",postValues.authorLink)
-    authorLink.innerText = postValues.authorName;
-    upvote.innerText = `Votes: ${postValues.upvotes} Comments: ${postValues.numComments}`
+    authorLink.innerText = `✍️ Author: ${postValues.authorName}`
+    timeSpan.innerText = ` 📅 Date Posted: ${d.getMonth()+1}/${d.getDate()}/${d.getFullYear()}`
+    upvote.innerText = `👍 Votes: ${postValues.upvotes} 💬 Comments: ${postValues.numComments}`
     subLink.setAttribute("href", postValues.subURL);
     subLink.innerText = postValues.title;
+    upvote.classList.add("votemoji")
     
     subTitle.append(subLink)
     listItem.append(subTitle);
     authorTag.append(authorLink);
+    authorTag.append(timeSpan);
     listItem.append(authorTag);
     listItem.append(upvote);
 

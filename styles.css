@@ -7,7 +7,7 @@ body {
   background-color: whitesmoke;
 }
 
-h1 {
+div.header {
   width: 100%;
   margin-top: 0px;
   padding: 45px;
@@ -15,6 +15,11 @@ h1 {
   text-align: center;
   color: white;
   background-color: #FF5700;
+  text-shadow: 2px 2px black;
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 form#search-form {
@@ -38,6 +43,8 @@ form * {
     border: none;
     padding: 10px 20px;
     border-radius: 0.5em;
+    box-shadow: 2px 2px black;
+    margin-top: 20px;
   }
 
 #search-bar {
@@ -75,4 +82,22 @@ li {
 
 p > a {
   text-decoration: none;
+}
+
+#error-alert > span{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: large;
+  color: white;
+}
+
+#error-alert {
+  width: 50%;
+}
+
+img {
+  background-color: white;
+}
+
+a:hover {
+  color: #FF5700;
 }
