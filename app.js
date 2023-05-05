@@ -1,16 +1,3 @@
-// fetch("https://www.reddit.com/r/javascript.json")
-// .catch(err => console.error(err))
-// .then(data => data.json())
-// .then(console.log)
-
-// Set the search box value = to user input and store it on button click(eventListener) DONE
-
-//Return all the subreddit posts from the value we stored DONE
-
-//Display/store username and account for the author of the post DONE
-
-//Append errors to the error alert div- DONE
-
 const searchBarSubmit = document.querySelector("#search-bar-submit")
 const resultsList = document.body.querySelector('#search-results-list');
 const errorSpan = document.body.querySelector('#error-alert span');

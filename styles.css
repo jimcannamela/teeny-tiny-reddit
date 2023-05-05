@@ -11,7 +11,7 @@ div.header {
   width: 100%;
   margin-top: 0px;
   padding: 45px;
-  height: 40px;
+  /* height: 40px; */
   text-align: center;
   color: white;
   background-color: #FF5700;
@@ -73,11 +73,12 @@ li > p{
 li {
   list-style-type: none;
   border: 1px solid #FF5700;
-  width: 50%;
-  margin-left: 25%;
-  margin-bottom: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 10%;
   border-radius: .5em;
   background-color: ghostwhite;
+  overflow:auto;
 }
 
 p > a {
@@ -101,3 +102,44 @@ img {
 a:hover {
   color: #FF5700;
 }
+
+ul {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+
+li:hover {
+  background-color: #fedac8;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:hover {
+  background-color: darkgray;
+}
+
+/* width */
+::-webkit-scrollbar {
+  height: 5px;
+  border-radius: 0.5em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0.5em;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 0.5em;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  border-radius: 0.5em;
+}
+
+::-webkit-scrollbar-button:end{ width:5%;}
+::-webkit-scrollbar-button:start{ width:5%;}
